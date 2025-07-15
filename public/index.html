@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Buscador Masivo de Archivos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🔎 Buscador Masivo de Archivos</h1>
+
+  <div class="acciones">
+    <input type="text" id="origen" placeholder="Ruta de carpeta origen" style="width: 60%;" />
+    <input type="text" id="destino" placeholder="Ruta de carpeta destino" style="width: 60%; margin-top: 5px;" />
+    <input type="text" id="filtro" placeholder="Filtrar por nombre (coma: pdf,instalador)" style="width: 100%; margin-top: 5px; display: none;" />
+
+    <div style="margin-top: 10px;">
+      <button id="buscar">Buscar</button>
+      <button id="mover" disabled>Mover seleccionados</button>
+      <button id="copiar" disabled>Copiar seleccionados</button>
+    <button id="seleccionarCopiarCarpetas">Copiar carpetas</button>
+<button id="quitarSeleccionCarpetas">Eliminar selección de carpetas</button>
+      <button id="eliminarSeleccionados" disabled>Eliminar seleccionados</button>
+      
+      <button id="verDuplicados" disabled>Ver duplicados</button>
+      <button id="borrarDuplicados" disabled>Borrar duplicados</button>
+      <button id="verCarpetasDuplicadas">Carpetas duplicadas</button>
+    </div>
+  </div>
+
+  <div class="fila">
+    <div id="resultado" class="columna izquierda scroll"></div>
+    <div id="preview" class="columna derecha scroll">
+      <p><em>Selecciona un archivo para ver su vista previa.</em></p>
+    </div>
+  </div>
+
+  <div class="comparacion" style="margin-top: 30px;">
+    <h2>🆚 Comparar duplicados entre dos carpetas</h2>
+    <input type="text" id="ruta1" placeholder="Ruta carpeta 1" style="width: 48%;" />
+    <input type="text" id="ruta2" placeholder="Ruta carpeta 2" style="width: 48%;" />
+    <button id="compararDuplicados">Comparar duplicados</button>
+  </div>
+
+  <div class="fila duplicados-paneles">
+    <div class="columna izquierda scroll">
+      <h3>🔁 Duplicados entre carpetas</h3>
+      <div id="comparacionRutasLista"></div>
+    </div>
+    <div class="columna derecha scroll">
+      <h3>📂 Duplicados en carpeta origen</h3>
+      <div id="duplicadosLista"></div>
+    </div>
+  </div>
+
+  <script src="vista_previa.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
